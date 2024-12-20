@@ -23,4 +23,7 @@ public class CourseRepository {
     public Map<String, Course> findAll() {
         return courseStorage;
     }
+    public void delete(String id) {
+        courseStorage.remove(id);
+    }
 }

@@ -1,71 +1,78 @@
 package com.example.demo.model;
 
 public class User {
-    private String id;       // Unique identifier for the user
+    private String id;       // Unique user identifier
     private String name;     // User's name
-    private String role;     // Role (e.g., Admin, Student, etc.)
+    private String email;    // User's email
     private String password; // User's password
+    private Role role;       // User's role (ADMIN, INSTRUCTOR, STUDENT)
+
+    // Enum for Role
+    public enum Role {
+        ADMIN, INSTRUCTOR, STUDENT
+    }
 
     // Default constructor
-    public User() {
-    }
+    public User() {}
 
     // Parameterized constructor
-    public User(String id, String name, String role, String password) {
+    public User(String id, String name, String email, String password, Role role) {
         this.id = id;
         this.name = name;
-        this.role = role;
+        this.email = email;
         this.password = password;
+        this.role = role;
     }
 
-    // Getter for id
+    // Getters and Setters
     public String getId() {
         return id;
     }
 
-    // Setter for id
     public void setId(String id) {
         this.id = id;
     }
 
-    // Getter for name
     public String getName() {
         return name;
     }
 
-    // Setter for name
     public void setName(String name) {
         this.name = name;
     }
 
-    // Getter for role
-    public String getRole() {
-        return role;
+    public String getEmail() {
+        return email;
     }
 
-    // Setter for role
-    public void setRole(String role) {
-        this.role = role;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    // Getter for password
     public String getPassword() {
         return password;
     }
 
-    // Setter for password
     public void setPassword(String password) {
         this.password = password;
     }
 
-    // toString method for debugging purposes
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    // toString() method for debugging
     @Override
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", role='" + role + '\'' +
-                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", role=" + role +
                 '}';
     }
 }
